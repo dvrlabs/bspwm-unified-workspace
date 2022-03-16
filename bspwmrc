@@ -14,7 +14,7 @@
 ##########################################################
 # DATE         - 03/16/22                                #      
 ##########################################################
-# GITHUB       -                                         # 
+# https://github.com/dvrlabs/bspwm-unified-workspace     # 
 ##########################################################
 
 #Start hot key daemon.
@@ -50,7 +50,7 @@ bspc config pointer_action2 resize_corner
 ##########################################################
 bspc rule -a ulauncher state=floating follow=off
 bspc rule -a ulauncher-toggle state=floating follow=off
-bspc rule -a expandedViewDriver.py state=floating follow=off
+
 
 
 ##########################################################
