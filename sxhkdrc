@@ -1,0 +1,224 @@
+#########################################################
+#  |  __ \ \    / /  __ \| |        /\   |  _ \ / ____|  #
+#  | |  | \ \  / /| |__) | |       /  \  | |_) | (___    #
+#  | |  | |\ \/ / |  _  /| |      / /\ \ |  _ < \___ \   #
+#  | |__| | \  /  | | \ \| |____ / ____ \| |_) |____) |  #
+#  |_____/   \/   |_|  \_\______/_/    \_\____/|_____/   #
+##########################################################
+# CONFIGURATON - sxhkdrc  	                         #	         
+##########################################################
+# SUMMARY      - hotkey daemon script for bspwm          #	
+##########################################################
+# VERSION      - 1.0.0				         # 
+##########################################################
+# DATE         - 03/16/22		                 #	
+##########################################################
+# GITHUB       -                                         # 
+##########################################################
+
+
+##############################################
+# application hotkeys		             # 
+##############################################
+
+#code editor
+super + q
+	code
+
+#file manager
+super + e
+	nemo	
+
+#web browser
+super + w
+	google-chrome
+	
+#terminal emulator
+super + Return
+	konsole	
+
+# launcher
+alt + @space
+	ulauncher-toggle	
+
+# sxhkd reload 
+super + Escape
+	pkill -USR1 -x sxhkd
+
+##############################################
+# bspwm hotkeys				     #
+##############################################
+
+# quit
+super + alt + q
+	bspc quit
+
+# restart
+super + alt + r
+	bspc wm -r 
+# close
+super + c
+	bspc node -c
+# kill
+super + shift + c
+	bspc node -k
+
+# layout swap: Tiled/Monocle
+super + backslash
+	bspc desktop -l next
+
+##############################################
+# Window Tiling Modes                	     #
+##############################################
+	
+#Pseudo	
+super + shift + t
+	bspc node -t pseudo_tiled
+
+#Tiled
+super + t
+	bspc node -t tiled 
+
+#Floating
+super + f
+	bspc node -t floating 
+
+#Fullscreen
+super + @space 
+	bspc node -t fullscreen 
+
+##############################################
+# focus/swap				     #
+##############################################
+
+# focus 
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east} 
+
+# swap 
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east} --follow
+
+# next/previous 
+super + ctrl + {j, k}
+	bspc node -f {next,prev}.local.!hidden.window
+
+# older/newer 
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+
+##############################################
+# Unified Workspace (Standard DE *Desktops*) #
+# 	Configured for 3 montitors	     #
+##############################################
+
+# move to prev/next montior
+super + {comma,period}
+	bspc node -m {prev,next} --follow
+
+# move to specific monitor 
+super + alt + Left
+	bspc node -m DVI-D-0 --follow 
+super + alt + Down
+	bspc node -m HDMI-A-0 --follow
+super + alt + Right
+	bspc node -m DisplayPort-1 --follow
+
+# cycle unified workspace  
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local; \ 
+        bspc monitor -f next; \
+	bspc desktop -f {prev,next}.local; \
+        bspc monitor -f next; \
+	bspc desktop -f {prev,next}.local; \
+        bspc monitor -f next
+
+# send to the given workspace 
+super + shift + {1-4,0}
+	bspc node -d '^{1-4,10}'
+
+# focus specific unified workspace
+super + 1
+	bspc desktop -f 1; \
+	bspc desktop -f I; \
+	bspc desktop -f one;
+
+super + 2
+	bspc desktop -f 2; \
+	bspc desktop -f II; \
+	bspc desktop -f two;
+
+super + 3
+	bspc desktop -f 3; \
+	bspc desktop -f III; \
+	bspc desktop -f three;
+
+super + 4
+	bspc desktop -f 4; \
+	bspc desktop -f IV; \
+	bspc desktop -f four;
+
+
+##############################################
+# resize/move(float) 			     #
+##############################################
+
+# expand 
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract 
+super + alt + ctrl + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move 
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+##############################################
+# Miscellaneous	                             #
+##############################################
+#
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+# Node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+#focus the node for the given path jump
+#super + {p,b,comma,period}
+	#bspc node -f @{parent,brother,first,second}
+
+##############################################
+# preselect - DISABLED	                     #
+##############################################
+
+# preselect the direction
+#super + ctrl + {h,j,k,l}
+	#bspc node -p {west,south,north,east}
+
+# preselect the ratio
+#super + ctrl + {1-9}
+	#bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+#super + ctrl + space
+	#bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+#super + ctrl + shift + space
+	#bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
