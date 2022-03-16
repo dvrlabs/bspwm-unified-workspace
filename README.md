@@ -1,7 +1,7 @@
 # bspwm-unified-workspace
 Configuration files for a traditional unified workspace in bspwm. Uses polybar.
 
-##Inspired by the tiling scripts krohnkite/bismuth in KDE
+## Inspired by the tiling scripts krohnkite/bismuth in KDE
 I essenially wanted most of the same functionality as krohnkite/bismuth, but in an actual standalone WM.
 After trying i3-gaps, i was very disappointed. 
 
