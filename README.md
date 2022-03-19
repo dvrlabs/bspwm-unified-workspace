@@ -10,4 +10,19 @@ Instead of having a unified workspace, each monitor has it's own workspaces.
 
 bspwm-unified-workspace goal is to have configs for "one workspace across all monitors". You can have more than one, or four, workspaces that are shared on all monitors.
 
+## Most important part
+
+To cycle all monitors at once, you need the following bspc command,
+recommended by the BSPWM dev himself.
+
+```
+cycle_dir={prev,next}; \
+    bspc desktop "$\{cycle_dir\}.local" -f; \
+    for mon_id in $(bspc query -M -m '.!focused'); do \
+        bspc desktop "$\{mon_id\}:focused#$\{cycle_dir\}.local" -a; \
+    done
+```
+
+[Issue 564](https://github.com/baskerville/bspwm/issues/564)
+
 
