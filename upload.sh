@@ -1,5 +1,3 @@
-now=$(date)
-
 git add .
-git commit -m "$now"
+git commit -m date
 git push origin --force
