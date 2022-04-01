@@ -1,5 +1,11 @@
 #!/bin/sh
 
+echo "Installing configs..."
+
+mkdir -p $HOME/.config/bspwm
+mkdir -p $HOME/.config/sxhkd
+mkdir -p $HOME/.config/polybar
+
 cp bspwmrc $HOME/.config/bspwm/bspwmrc
 cp sxhkdrc $HOME/.config/sxhkd/sxhkdrc
 cp config.ini $HOME/.config/polybar/config.ini

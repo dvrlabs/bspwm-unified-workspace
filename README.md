@@ -2,7 +2,7 @@
 
 Configuration files for a traditional unified workspace in bspwm. 
 
-s## Installation
+## Installation
 
 ### Ubuntu
 
