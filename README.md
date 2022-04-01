@@ -4,7 +4,7 @@ Configuration files for a traditional unified workspace in bspwm.
 
 ## Installation
 
-### Ubuntu
+### Ubuntu 22.04 "Jammy Jellyfish"
 
 ```
 sudo apt install bspwm sxhkd polybar picom nitrogen arandr autorandr xscreensaver gucharmap
