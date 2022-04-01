@@ -7,7 +7,7 @@ s## Installation
 ### Ubuntu
 
 ```
-sudo apt install bspwm sxhkd polybar picom nitrogen arandr autorandr xscreensaver
+sudo apt install bspwm sxhkd polybar picom nitrogen arandr autorandr xscreensaver gucharmap
 ```
 
 Recommend downloading ulauncher.deb instead of adding the PPA. 
