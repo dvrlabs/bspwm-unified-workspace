@@ -33,17 +33,17 @@ super + e
 super + w
 	google-chrome
 	
-#terminal emulator
-super + Return
-	alacritty	
-
 # launcher
-alt + @space
+super + l
 	ulauncher-toggle	
 
 #screen snippet tool
 super + s
 	spectacle -r
+
+#terminal emulator
+super + Return
+	alacritty	
 
 # sxhkd reload 
 super + Escape
@@ -88,7 +88,7 @@ super + f
 	bspc node -t floating 
 
 #Fullscreen
-super + @space 
+super + m
 	bspc node -t \~fullscreen 
 
 ##############################################
@@ -229,3 +229,4 @@ super + {grave,Tab}
 #super + ctrl + shift + space
 	#bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
+#alt + @space
