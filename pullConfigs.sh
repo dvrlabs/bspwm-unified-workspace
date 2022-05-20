@@ -9,6 +9,7 @@ cp $HOME/.config/polybar/launch.sh launch.sh
 cp $HOME/.config/polybar/changeAudio.sh changeAudio.sh
 cp $HOME/.config/polybar/headphoneAudio.sh headphoneAudio.sh
 cp $HOME/.config/polybar/speakerAudio.sh speakerAudio.sh
+cp $HOME/.config/polybar/screensaver.sh screensaver.sh
 
 
 

@@ -24,6 +24,10 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+# start polybar
 polybar mybar -c $HOME/.config/polybar/config.ini &
+
+#lower polybar on z axis
+xdo lower -N "Polybar"
 
 echo "Bars launched..."

@@ -31,10 +31,10 @@ super + e
 
 #web browser
 super + w
-	google-chrome
+	/home/daniel/.firefoxapp/firefox/firefox-bin	
 	
 # launcher
-super + l
+super + o
 	ulauncher-toggle	
 
 #screen snippet tool

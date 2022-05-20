@@ -60,9 +60,8 @@ autorandr bspwm &
 sh -c 'sleep 2; picom -b -c &'
 sh -c 'sleep 2; exec nitrogen --restore &'
 ~/.config/polybar/launch.sh &
-xscreensaver &
+gnome-screensaver &
 ulauncher --hide-window &
-
 
 
 
