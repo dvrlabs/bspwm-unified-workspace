@@ -2,9 +2,18 @@
 
 Configuration files for a traditional unified workspace in bspwm. 
 
+## Moving on,
+As of today, May 19th 2022, I will no longer be maintaining this repo
+My wish is that this is useful to someone in the future who is looking to create a 
+multi-monitor desktop with bspwm but want's a similar workspace style similar to how Pop OS currently is.
+
+I'll be trying out having seperate workspaces for each monitor. It seemed too complicated and counter-intuitive to begin with, but perhaps will be more powerful, and pragmatic. Similar to how using a CLI feels at first versus a GUI.
+
 ## Installation
 
 ### Ubuntu 22.04 "Jammy Jellyfish"
+ 
+Simply run the ./install.sh script and install-extras.sh script after cloning the repo.
 
 ```
 sudo apt install bspwm sxhkd polybar picom nitrogen arandr autorandr xscreensaver gucharmap
