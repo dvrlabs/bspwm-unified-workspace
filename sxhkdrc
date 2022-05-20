@@ -31,7 +31,7 @@ super + e
 
 #web browser
 super + w
-	/home/daniel/.firefoxapp/firefox/firefox-bin	
+	firefox-bin	
 	
 # launcher
 super + o
